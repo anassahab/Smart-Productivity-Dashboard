@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <header class="header">
+        <h1>Productivity Dashboard</h1>
+        <button id="themeToggle">🌙</button>
+    </header>
+
+    <main class="container">
+        <!--Task Form-->
+        <section class="task-form">
+            <h2>Add Task</h2>
+            <form id="taskForm">
+                <input type="text" id="title" placeholder="Task title" required />
+                <input type="date" id="dueDate" required/>
+                <select id="priority">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+                <button type="submit">Add Task</button>
+            </form>
+</section>
+<!--Filters-->
+<section class="filters">
+    <input type="text" id="search" placeholder="searchTask" />
+    <select id="filterPriority">
+        <option value="All">All</option>
+        <option value="High">High</option> 
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+    </select>
+</section>
+
+
+<section class="task-List">
+    <h2>Your Tasks</h2>
+    <div id="tasks"></div>
+</section>
+<!---Stats-->
+<section class="stats">
+<h2>Progress</h2>
+<p>Total: <span id="totalTasks">0</span></p>
+<p>Completed: </p>: <span id="CompleteTasks">0</span></p>
+<div class="progress-bar">
+<div id="progress-fill"></div>
+</div>
+</section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

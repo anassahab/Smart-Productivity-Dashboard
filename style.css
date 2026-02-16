@@ -1,0 +1,89 @@
+:root {
+  --bg: #f4f6f9;
+  --card: #ffffff;
+  --text: #222;
+  --primary: #4f46e5;
+}
+
+body.dark {
+  --bg: #1f2937;
+  --card: #374151;
+  --text: #f9fafb;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+.header {
+  display :flex  ;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: white;
+} 
+
+.container {
+  padding: 2rem;
+  display: grid;
+  gap: 2rem;
+}
+
+section {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem;
+  margin-top: 10px;
+  background: var(--bg);
+  border-radius: 6px;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.task.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.progress-bar {
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#progressFill {
+  height: 100%;
+  width: 0%;
+  background: var(--primary);
+  transition: 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
